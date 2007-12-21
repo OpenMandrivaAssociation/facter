@@ -12,6 +12,7 @@ URL:            http://reductivelabs.com/projects/facter
 Source0:        http://reductivelabs.com/downloads/facter/%{name}-%{version}.tgz
 Patch100:       facter-1.3.8-fix_OSRelease.patch
 BuildArch:      noarch
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	ruby
 Requires:       ruby >= 1.8.1
 Requires:       dmidecode
