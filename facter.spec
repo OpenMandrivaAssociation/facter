@@ -1,6 +1,6 @@
 %define name    facter
-%define version 1.3.8
-%define release %mkrel 3
+%define version 1.5
+%define release %mkrel 1
 
 Name:           %{name}
 Version:        %{version}
@@ -10,7 +10,6 @@ License:        LGPLv2
 Group:          System/Libraries
 URL:            http://reductivelabs.com/projects/facter
 Source0:        http://reductivelabs.com/downloads/facter/%{name}-%{version}.tgz
-Patch100:       facter-1.3.8-fix_OSRelease.patch
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	ruby
@@ -25,7 +24,6 @@ operating system. Additional facts can be added through simple Ruby scripts
 
 %prep
 %setup -q
-%patch100 -p1 -b .fix_OSRelease
 
 %build
 # Use /usr/bin/ruby directly instead of /usr/bin/env ruby in
