@@ -1,5 +1,5 @@
 %define name    facter
-%define version 1.5
+%define version 1.5.6
 %define release %mkrel 1
 
 Name:           %{name}
@@ -9,7 +9,7 @@ Summary:        Ruby module for collecting simple facts about a host operating s
 License:        LGPLv2
 Group:          System/Libraries
 URL:            http://reductivelabs.com/projects/facter
-Source0:        http://reductivelabs.com/downloads/facter/%{name}-%{version}.tgz
+Source0:        http://reductivelabs.com/downloads/facter/%{name}-%{version}.tar.gz
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	ruby
