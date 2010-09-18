@@ -1,5 +1,5 @@
 %define name    facter
-%define version 1.5.7
+%define version 1.5.8
 %define release %mkrel 1
 
 Name:           %{name}
