@@ -1,6 +1,6 @@
 %define name    facter
 %define version 1.5.8
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:           %{name}
 Version:        %{version}
@@ -16,7 +16,8 @@ BuildRequires:	ruby
 Requires:       ruby >= 1.8.1
 Requires:       dmidecode
 Requires:       lsb-release
-
+# needed for host, in facter/ipaddress.rb
+Requires:       bind-utils
 %description 
 Ruby module for collecting simple facts about a host Operating
 system. Some of the facts are preconfigured, such as the hostname and the
