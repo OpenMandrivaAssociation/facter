@@ -1,18 +1,18 @@
 %define name    facter
-%define version 1.5.9
+%define version 1.6.1
 %define release %mkrel 1
 
 Name:           %{name}
 Version:        %{version}
 Release:        %{release}
 Summary:        Ruby module for collecting simple facts about a host operating system
-License:        LGPLv2
+License:        Apache Software License
 Group:          System/Libraries
-URL:            http://reductivelabs.com/projects/facter
-Source0:        http://reductivelabs.com/downloads/facter/%{name}-%{version}.tar.gz
+URL:            http://www.puppetlabs.com/puppet/related-projects/facter/
+Source0:        http://www.puppetlabs.com/downloads/%{name}/%{name}-%{version}.tar.gz
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires:	ruby
+BuildRequires:  ruby
 Requires:       ruby >= 1.8.1
 Requires:       dmidecode
 Requires:       lsb-release
@@ -39,7 +39,6 @@ operating system. Additional facts can be added through simple Ruby scripts
 %{__install} -d -m 0755 %{buildroot}%{_bindir}
 %{__install} -d -m 0755 %{buildroot}%{_defaultdocdir}/%{name}
 %{__install} -p -m 0644 lib/*.rb %{buildroot}%{ruby_sitelibdir}
-#%{__install} -p -m 0644 lib/facter/*.rb %{buildroot}%{ruby_sitelibdir}/%{name}
 %{__cp} -a lib/facter/* %{buildroot}%{ruby_sitelibdir}/%{name}
 %{__install} -p -m 0755 bin/facter %{buildroot}%{_bindir}
 
@@ -49,7 +48,7 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
-%doc CHANGELOG COPYING INSTALL LICENSE README
+%doc CHANGELOG INSTALL LICENSE
 %{_bindir}/facter
 %{ruby_sitelibdir}/facter.rb
 %{ruby_sitelibdir}/%{name}
