@@ -1,6 +1,6 @@
 %define name    facter
 %define version 1.6.3
-%define release %mkrel 1
+%define release %mkrel 2
 
 Name:           %{name}
 Version:        %{version}
@@ -11,7 +11,6 @@ Group:          System/Libraries
 URL:            http://www.puppetlabs.com/puppet/related-projects/facter/
 Source0:        http://www.puppetlabs.com/downloads/%{name}/%{name}-%{version}.tar.gz
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:  ruby
 Requires:       ruby >= 1.8.1
 Requires:       dmidecode
