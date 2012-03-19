@@ -1,23 +1,20 @@
-%define name    facter
-%define version 1.6.3
-%define release %mkrel 2
-
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Summary:        Ruby module for collecting simple facts about a host operating system
-License:        Apache Software License
-Group:          System/Libraries
-URL:            http://www.puppetlabs.com/puppet/related-projects/facter/
-Source0:        http://www.puppetlabs.com/downloads/%{name}/%{name}-%{version}.tar.gz
-BuildArch:      noarch
-BuildRequires:  ruby
-Requires:       ruby >= 1.8.1
-Requires:       dmidecode
-Requires:       lsb-release
+Name:		facter
+Version:	1.6.6
+Release:	%mkrel 1
+Summary:	Ruby module for collecting simple facts about a host operating system
+License:	Apache Software License
+Group:		System/Libraries
+URL:		http://www.puppetlabs.com/puppet/related-projects/facter/
+Source0:	http://www.puppetlabs.com/downloads/%{name}/%{name}-%{version}.tar.gz
+BuildArch:	noarch
+BuildRequires:	ruby
+Requires:	ruby >= 1.8.1
+Requires:	dmidecode
+Requires:	lsb-release
 # needed for host, in facter/ipaddress.rb
-Requires:       bind-utils
-%description 
+Requires:	bind-utils
+
+%description
 Ruby module for collecting simple facts about a host Operating
 system. Some of the facts are preconfigured, such as the hostname and the
 operating system. Additional facts can be added through simple Ruby scripts
@@ -29,24 +26,22 @@ operating system. Additional facts can be added through simple Ruby scripts
 # Use /usr/bin/ruby directly instead of /usr/bin/env ruby in
 #+ executables. Otherwise, initscripts break since pidof can't
 #+ find the right process
-%{__sed} -i -e 's@^#!.*$@#! /usr/bin/ruby@' bin/facter
+%__sed -i -e 's@^#!.*$@#! /usr/bin/ruby@' bin/facter
 
 %install
-%{__rm} -rf %{buildroot}
+%__rm -rf %{buildroot}
 
-%{__install} -d -m 0755 %{buildroot}%{ruby_sitelibdir}/%{name}
-%{__install} -d -m 0755 %{buildroot}%{_bindir}
-%{__install} -d -m 0755 %{buildroot}%{_defaultdocdir}/%{name}
-%{__install} -p -m 0644 lib/*.rb %{buildroot}%{ruby_sitelibdir}
-%{__cp} -a lib/facter/* %{buildroot}%{ruby_sitelibdir}/%{name}
-%{__install} -p -m 0755 bin/facter %{buildroot}%{_bindir}
+%__install -d -m 0755 %{buildroot}%{ruby_sitelibdir}/%{name}
+%__install -d -m 0755 %{buildroot}%{_bindir}
+%__install -d -m 0755 %{buildroot}%{_defaultdocdir}/%{name}
+%__install -p -m 0644 lib/*.rb %{buildroot}%{ruby_sitelibdir}
+%__cp -a lib/facter/* %{buildroot}%{ruby_sitelibdir}/%{name}
+%__install -p -m 0755 bin/facter %{buildroot}%{_bindir}
 
 %clean
-rm -rf %{buildroot}
-
+%__rm -rf %{buildroot}
 
 %files
-%defattr(-,root,root,-)
 %doc CHANGELOG INSTALL LICENSE
 %{_bindir}/facter
 %{ruby_sitelibdir}/facter.rb
