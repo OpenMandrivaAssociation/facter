@@ -1,6 +1,6 @@
 Name:		facter
 Version:	1.6.6
-Release:	2
+Release:	3
 Summary:	Ruby module for collecting simple facts about a host operating system
 License:	Apache Software License
 Group:		System/Libraries
