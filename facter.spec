@@ -4,7 +4,7 @@ Release:	3
 Summary:	Ruby module for collecting simple facts about a host operating system
 License:	Apache Software License
 Group:		System/Libraries
-URL:		http://www.puppetlabs.com/puppet/related-projects/facter/
+URL:		https://www.puppetlabs.com/puppet/related-projects/facter/
 Source0:	http://www.puppetlabs.com/downloads/%{name}/%{name}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	ruby
